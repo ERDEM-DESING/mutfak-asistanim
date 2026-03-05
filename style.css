@@ -1,5 +1,7 @@
 body { font-family: sans-serif; background-color: #fdf2e9; display: flex; justify-content: center; padding: 50px; }
 .container { background: white; padding: 25px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: 350px; text-align: center; }
-button { background-color: #e67e22; color: white; border: none; padding: 10px; width: 100%; cursor: pointer; border-radius: 10px; }
-input, select { width: 100%; padding: 10px; margin: 10px 0; border-radius: 10px; border: 1px solid #ddd; }
+button { color: white; border: none; padding: 10px; width: 100%; cursor: pointer; border-radius: 10px; margin-top: 5px; }
+#converter button { background-color: #e67e22; }
+#suggestor button { background-color: #d35400; }
+input, select { width: 100%; padding: 10px; margin: 10px 0; border-radius: 10px; border: 1px solid #ddd; box-sizing: border-box; }
 #resultText, #menuResult { margin-top: 15px; font-weight: bold; color: #d35400; }
