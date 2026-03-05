@@ -6,9 +6,19 @@ function donustur() {
 }
 
 function yemekOner() {
-    const corbalar = ["Mercimek Çorbası", "Ezogelin Çorbası", "Yayla Çorbası", "Domates Çorbası"];
-    const anaYemekler = ["Tas Kebabı", "Karnıyarık", "Taze Fasulye", "Hünkar Beğendi", "Orman Kebabı"];
-    const yanUrunler = ["Pirinç Pilavı", "Bulgur Pilavı", "Mevsim Salata", "Cacık"];
+    const corbalar = [
+        "Mercimek Çorbası", "Ezogelin Çorbası", "Yayla Çorbası", "Domates Çorbası", 
+        "Tarhana Çorbası", "Düğün Çorbası", "Mantar Çorbası", "Kelle Paça"
+    ];
+    const anaYemekler = [
+        "Tas Kebabı", "Karnıyarık", "Taze Fasulye", "Hünkar Beğendi", 
+        "Orman Kebabı", "İzmir Köfte", "Ali Nazik", "Patlıcan Musakka", 
+        "Kuzu Tandır", "İmam Bayıldı", "Etli Güveç", "Tavuk Sote"
+    ];
+    const yanUrunler = [
+        "Pirinç Pilavı", "Bulgur Pilavı", "Mevsim Salata", "Cacık", 
+        "Gavurdağı Salatası", "Şehriye Pilavı", "Haydari", "Çoban Salata"
+    ];
 
     const secilenCorba = corbalar[Math.floor(Math.random() * corbalar.length)];
     const secilenYemek = anaYemekler[Math.floor(Math.random() * anaYemekler.length)];
@@ -21,6 +31,6 @@ function yemekOner() {
 }
 
 function tatliOner() {
-    const tatlilar = ["Sütlaç", "Baklava", "Künefe", "Magnolia", "Güllaç"];
+    const tatlilar = ["Sütlaç", "Baklava", "Künefe", "Magnolia", "Güllaç", "Kazandibi", "Şekerpare", "Fırın Sütlaç"];
     document.getElementById('dessertResult').innerText = "Tatlımız: " + tatlilar[Math.floor(Math.random() * tatlilar.length)];
 }
