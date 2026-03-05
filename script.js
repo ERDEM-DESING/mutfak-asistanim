@@ -5,7 +5,7 @@ function donustur() {
     document.getElementById('resultText').innerText = miktar ? sonuc : "Miktar girin!";
 }
 function yemekOner() {
-    const yemekler = ["Mercimek Çorbası", "Karnıyarık", "Mantı", "Taze Fasulye", "Hünkar Beğendi"];
+    const yemekler = ["Mercimek Çorbası", "Karnıyarık", "Mantı", "Taze Fasulye", "Hünkar Beğendi", "İskender", "Ali Nazik", "İçli Köfte"];
     document.getElementById('menuResult').innerText = "Önerimiz: " + yemekler[Math.floor(Math.random() * yemekler.length)];
 }
 function tatliOner() {
