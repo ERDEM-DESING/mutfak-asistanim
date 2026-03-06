@@ -53,41 +53,28 @@ function donustur() {
     document.getElementById('resultText').innerText = "Sonuç: " + finalSonuc;
 }
 
-// --- YEMEK ÖNERİSİ (GÜNCELLENDİ: İÇECEK EKLENDİ) ---
+// --- YEMEK ÖNERİSİ ---
 function yemekOner() {
-    const corbalar = [
-        "Mercimek Çorbası", "Ezogelin Çorbası", "Yayla Çorbası", "Domates Çorbası", 
-        "Tarhana Çorbası", "Düğün Çorbası", "Mantar Çorbası", "Kelle Paça", "Şehriye Çorbası", "Ayran Aşı Çorbası"
-    ];
-    const anaYemekler = [
-        "Tas Kebabı", "Karnıyarık", "Taze Fasulye", "Hünkar Beğendi", 
-        "Orman Kebabı", "İzmir Köfte", "Ali Nazik", "Patlıcan Musakka", 
-        "Kuzu Tandır", "İmam Bayıldı", "Etli Güveç", "Tavuk Sote", "Kuzu İncik", "Kadınbudu Köfte", "Tavuk Dünyası Usulü Kekikli Tavuk", "Fırın Tavuk Baget", "Etli Bamya", "Patlıcan Oturtma"
-    ];
-    const yanUrunler = [
-        "Pirinç Pilavı", "Bulgur Pilavı", "Mevsim Salata", "Cacık", 
-        "Gavurdağı Salatası", "Şehriye Pilavı", "Haydari", "Çoban Salata", "Humus", "Acılı Ezme", "Patates Kızartması", "Rus Salatası", "Şaksuka", "Deniz Börülcesi", "Mücver"
-    ];
-    // Yeni Kategori: İçecekler
-    const icecekler = [
-        "Bol Köpüklü Ayran", "Acılı Şalgam Suyu", "Ev Yapımı Limonata", "Naneli Taze Ayran", 
-        "Sıkma Portakal Suyu", "Soğuk Çay", "Maden Suyu", "Üzüm Şırası", "Osmanlı Şerbeti"
-    ];
+    const corbalar = ["Mercimek Çorbası", "Ezogelin Çorbası", "Yayla Çorbası", "Domates Çorbası", "Tarhana Çorbası", "Ayran Aşı Çorbası"];
+    const anaYemekler = ["Tas Kebabı", "Karnıyarık", "Taze Fasulye", "Hünkar Beğendi", "İzmir Köfte", "Patlıcan Musakka", "Tavuk Sote", "Kadınbudu Köfte"];
+    const yanUrunler = ["Pirinç Pilavı", "Bulgur Pilavı", "Mevsim Salata", "Cacık", "Haydari", "Çoban Salata", "Patates Kızartması"];
+    const icecekler = ["Bol Köpüklü Ayran", "Acılı Şalgam Suyu", "Ev Yapımı Limonata", "Naneli Taze Ayran", "Sıkma Portakal Suyu", "Soğuk Çay", "Maden Suyu", "Reyhan Şerbeti", "Demirhindi Şerbeti"];
 
     const secilenCorba = corbalar[Math.floor(Math.random() * corbalar.length)];
     const secilenYemek = anaYemekler[Math.floor(Math.random() * anaYemekler.length)];
     const secilenYan = yanUrunler[Math.floor(Math.random() * yanUrunler.length)];
     const secilenIcecek = icecekler[Math.floor(Math.random() * icecekler.length)];
 
+    // ÇIKTIYI BURADA KONTROL EDİYORUZ
     document.getElementById('menuResult').innerHTML = 
-        "🥣 " + secilenCorba + "<br>" + 
-        "🥘 " + secilenYemek + "<br>" + 
-        "🍚 " + secilenYan + "<br>" +
-        "🥤 " + secilenIcecek; // Ekrana içeceği basıyoruz
+        "🥣 <b>Çorba:</b> " + secilenCorba + "<br>" + 
+        "🥘 <b>Ana Yemek:</b> " + secilenYemek + "<br>" + 
+        "🍚 <b>Yan Ürün:</b> " + secilenYan + "<br>" +
+        "🥤 <b>İçecek:</b> " + secilenIcecek;
 }
 
 // --- TATLI ÖNERİSİ ---
 function tatliOner() {
-    const tatlilar = ["Sütlaç", "Baklava", "Künefe", "Magnolia", "Güllaç", "Kazandibi", "Şekerpare", "Fırın Sütlaç", "Sufle", "Profiterol", "Kabak Tatlısı", "Ayva Tatlısı", "Revani", "Trileçe", "Supangle"];
+    const tatlilar = ["Sütlaç", "Baklava", "Künefe", "Magnolia", "Güllaç", "Kazandibi", "Şekerpare", "Sufle", "Profiterol", "Trileçe", "Supangle"];
     document.getElementById('dessertResult').innerText = "Tatlımız: " + tatlilar[Math.floor(Math.random() * tatlilar.length)];
 }
