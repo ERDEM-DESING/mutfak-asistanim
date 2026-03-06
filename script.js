@@ -8,7 +8,7 @@ function donustur() {
 function yemekOner() {
     const corbalar = [
         "Mercimek Çorbası", "Ezogelin Çorbası", "Yayla Çorbası", "Domates Çorbası", 
-        "Tarhana Çorbası", "Düğün Çorbası", "Mantar Çorbası", "Kelle Paça", "Şehriye Çorbası", "Tarhana Çorbası", "Mantar Çorbası", "Ezogelin Çorbası", "Düğün Çorbası"
+        "Tarhana Çorbası", "Düğün Çorbası", "Mantar Çorbası", "Kelle Paça", "Şehriye Çorbası", "Tarhana Çorbası", "Mantar Çorbası", "Ezogelin Çorbası", "Düğün Çorbası", "Ayran Aşı Çorbası"
     ];
     const anaYemekler = [
         "Tas Kebabı", "Karnıyarık", "Taze Fasulye", "Hünkar Beğendi", 
