@@ -13,7 +13,7 @@ function yemekOner() {
     const anaYemekler = [
         "Tas Kebabı", "Karnıyarık", "Taze Fasulye", "Hünkar Beğendi", 
         "Orman Kebabı", "İzmir Köfte", "Ali Nazik", "Patlıcan Musakka", 
-        "Kuzu Tandır", "İmam Bayıldı", "Etli Güveç", "Tavuk Sote", "Kuzu İncik", "Kadınbudu Köfte"
+        "Kuzu Tandır", "İmam Bayıldı", "Etli Güveç", "Tavuk Sote", "Kuzu İncik", "Kadınbudu Köfte", "Tavuk Dünyası Usulü Kekikli Tavuk"
     ];
     const yanUrunler = [
         "Pirinç Pilavı", "Bulgur Pilavı", "Mevsim Salata", "Cacık", 
