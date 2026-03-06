@@ -1,19 +1,70 @@
+// --- BİRİM VE YOĞUNLUK VERİLERİ ---
+const malzemeler = {
+    "su": 1,
+    "sut": 1.03,
+    "sivi_yag": 0.92,
+    "un": 0.6,
+    "toz_seker": 0.85,
+    "pirinc": 0.9,
+    "pudra_sekeri": 0.6,
+    "kakao": 0.5
+};
+
+const birimHacimleri = {
+    "su_bardagi": 200,
+    "cay_bardagi": 100,
+    "yemek_kasigi": 15,
+    "tatli_kasigi": 10,
+    "cay_kasigi": 5,
+    "ml": 1,
+    "gr": 0 // Gram özel durum olduğu için 0 bıraktık, fonksiyonda yöneteceğiz
+};
+
+// --- AKILLI DÖNÜŞTÜRÜCÜ FONKSİYONU ---
 function donustur() {
-    let miktar = document.getElementById('amount').value;
-    let birim = document.getElementById('unit').value;
-    let sonuc = birim === "ml" ? (miktar / 15).toFixed(1) + " kaşık" : (miktar / 140).toFixed(1) + " bardak";
-    document.getElementById('resultText').innerText = miktar ? sonuc : "Miktar girin!";
+    let miktar = parseFloat(document.getElementById('amount').value);
+    let kaynakBirim = document.getElementById('unit').value; // HTML'de "unit" id'li select olmalı
+    let hedefBirim = document.getElementById('targetUnit').value; // HTML'de "targetUnit" id'li select olmalı
+    let malzeme = document.getElementById('material').value; // HTML'de "material" id'li select olmalı
+
+    if (!miktar) {
+        document.getElementById('resultText').innerText = "Lütfen miktar girin!";
+        return;
+    }
+
+    const yogunluk = malzemeler[malzeme] || 1;
+    let gramKarsiligi;
+
+    // 1. Adım: Kaynaktan Gram'a çevir
+    if (kaynakBirim === "gr") {
+        gramKarsiligi = miktar;
+    } else {
+        let mlKarsiligi = miktar * birimHacimleri[kaynakBirim];
+        gramKarsiligi = mlKarsiligi * yogunluk;
+    }
+
+    // 2. Adım: Gram'dan Hedef Birime çevir
+    let finalSonuc;
+    if (hedefBirim === "gr") {
+        finalSonuc = gramKarsiligi.toFixed(1) + " gr";
+    } else {
+        let hedefMl = gramKarsiligi / yogunluk;
+        finalSonuc = (hedefMl / birimHacimleri[hedefBirim]).toFixed(1) + " " + hedefBirim.replace("_", " ");
+    }
+
+    document.getElementById('resultText').innerText = "Sonuç: " + finalSonuc;
 }
 
+// --- YEMEK ÖNERİSİ ---
 function yemekOner() {
     const corbalar = [
         "Mercimek Çorbası", "Ezogelin Çorbası", "Yayla Çorbası", "Domates Çorbası", 
-        "Tarhana Çorbası", "Düğün Çorbası", "Mantar Çorbası", "Kelle Paça", "Şehriye Çorbası", "Tarhana Çorbası", "Mantar Çorbası", "Ezogelin Çorbası", "Düğün Çorbası", "Ayran Aşı Çorbası"
+        "Tarhana Çorbası", "Düğün Çorbası", "Mantar Çorbası", "Kelle Paça", "Şehriye Çorbası", "Ayran Aşı Çorbası"
     ];
     const anaYemekler = [
         "Tas Kebabı", "Karnıyarık", "Taze Fasulye", "Hünkar Beğendi", 
         "Orman Kebabı", "İzmir Köfte", "Ali Nazik", "Patlıcan Musakka", 
-        "Kuzu Tandır", "İmam Bayıldı", "Etli Güveç", "Tavuk Sote", "Kuzu İncik", "Kadınbudu Köfte", "Tavuk Dünyası Usulü Kekikli Tavuk", "Fırın Tavuk Baget", "Etli Bamya", "Patlıcan Oturtma", "Alinazik"
+        "Kuzu Tandır", "İmam Bayıldı", "Etli Güveç", "Tavuk Sote", "Kuzu İncik", "Kadınbudu Köfte", "Tavuk Dünyası Usulü Kekikli Tavuk", "Fırın Tavuk Baget", "Etli Bamya", "Patlıcan Oturtma"
     ];
     const yanUrunler = [
         "Pirinç Pilavı", "Bulgur Pilavı", "Mevsim Salata", "Cacık", 
@@ -30,7 +81,8 @@ function yemekOner() {
         "🍚 " + secilenYan;
 }
 
+// --- TATLI ÖNERİSİ ---
 function tatliOner() {
-    const tatlilar = ["Sütlaç", "Baklava", "Künefe", "Magnolia", "Güllaç", "Kazandibi", "Şekerpare", "Fırın Sütlaç", "Kazandibi", "Kıbrıs Tatlısı", "Şekerpare", "Sufle", "Profiterol", "Kabak Tatlısı", "Ayva Tatlısı", "Revani", "Trileçe", "Supangle"];
+    const tatlilar = ["Sütlaç", "Baklava", "Künefe", "Magnolia", "Güllaç", "Kazandibi", "Şekerpare", "Fırın Sütlaç", "Sufle", "Profiterol", "Kabak Tatlısı", "Ayva Tatlısı", "Revani", "Trileçe", "Supangle"];
     document.getElementById('dessertResult').innerText = "Tatlımız: " + tatlilar[Math.floor(Math.random() * tatlilar.length)];
 }
