@@ -9,11 +9,12 @@ const birimHacimleri = {
     "tatli_kasigi": 10, "cay_kasigi": 5, "ml": 1, "gr": 0 
 };
 
+// --- AKILLI DÖNÜŞTÜRÜCÜ FONKSİYONU ---
 function donustur() {
     let miktar = parseFloat(document.getElementById('amount').value);
-    let kaynakBirim = document.getElementById('unit').value;
-    let hedefBirim = document.getElementById('targetUnit').value;
-    let malzeme = document.getElementById('material').value;
+    let kaynakBirim = document.getElementById('unit').value; 
+    let hedefBirim = document.getElementById('targetUnit').value; 
+    let malzeme = document.getElementById('material').value; 
 
     if (!miktar) {
         document.getElementById('resultText').innerText = "Lütfen miktar girin!";
@@ -33,11 +34,11 @@ function donustur() {
     document.getElementById('resultText').innerText = "Sonuç: " + finalSonuc;
 }
 
+// --- YEMEK ÖNERİSİ (İÇECEK EKLENDİ) ---
 function yemekOner() {
-    const corbalar = ["Mercimek Çorbası", "Ezogelin Çorbası", "Yayla Çorbası", "Domates Çorbası"];
-    const anaYemekler = ["Tas Kebabı", "Karnıyarık", "Taze Fasulye", "Hünkar Beğendi", "İzmir Köfte"];
+    const corbalar = ["Mercimek Çorbası", "Ezogelin Çorbası", "Yayla Çorbası", "Domates Çorbası", "Tarhana Çorbası"];
+    const anaYemekler = ["Tas Kebabı", "Karnıyarık", "Taze Fasulye", "Hünkar Beğendi", "İzmir Köfte", "Patlıcan Musakka"];
     const yanUrunler = ["Pirinç Pilavı", "Bulgur Pilavı", "Mevsim Salata", "Cacık", "Haydari"];
-    // İçecekler listesini buraya ekledik:
     const icecekler = ["Bol Köpüklü Ayran", "Acılı Şalgam Suyu", "Ev Yapımı Limonata", "Soğuk Çay", "Reyhan Şerbeti"];
 
     const secilenCorba = corbalar[Math.floor(Math.random() * corbalar.length)];
@@ -45,14 +46,14 @@ function yemekOner() {
     const secilenYan = yanUrunler[Math.floor(Math.random() * yanUrunler.length)];
     const secilenIcecek = icecekler[Math.floor(Math.random() * icecekler.length)];
 
-    // Çıktıya içeceği ekledik:
     document.getElementById('menuResult').innerHTML = 
         "🥣 " + secilenCorba + "<br>" + 
         "🥘 " + secilenYemek + "<br>" + 
         "🍚 " + secilenYan + "<br>" +
-        "🥤 " + secilenIcecek;
+        "🥤 " + secilenIcecek; // İçecek burada ekrana basılıyor
 }
 
+// --- TATLI ÖNERİSİ ---
 function tatliOner() {
     const tatlilar = ["Sütlaç", "Baklava", "Künefe", "Magnolia", "Güllaç", "Kazandibi", "Supangle"];
     document.getElementById('dessertResult').innerText = "Tatlımız: " + tatlilar[Math.floor(Math.random() * tatlilar.length)];
