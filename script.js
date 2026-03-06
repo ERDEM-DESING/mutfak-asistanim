@@ -17,7 +17,7 @@ function yemekOner() {
     ];
     const yanUrunler = [
         "Pirinç Pilavı", "Bulgur Pilavı", "Mevsim Salata", "Cacık", 
-        "Gavurdağı Salatası", "Şehriye Pilavı", "Haydari", "Çoban Salata"
+        "Gavurdağı Salatası", "Şehriye Pilavı", "Haydari", "Çoban Salata", "Humus"
     ];
 
     const secilenCorba = corbalar[Math.floor(Math.random() * corbalar.length)];
