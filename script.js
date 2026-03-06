@@ -31,6 +31,6 @@ function yemekOner() {
 }
 
 function tatliOner() {
-    const tatlilar = ["Sütlaç", "Baklava", "Künefe", "Magnolia", "Güllaç", "Kazandibi", "Şekerpare", "Fırın Sütlaç", "Kazandibi", "Kıbrıs Tatlısı", "Şekerpare"];
+    const tatlilar = ["Sütlaç", "Baklava", "Künefe", "Magnolia", "Güllaç", "Kazandibi", "Şekerpare", "Fırın Sütlaç", "Kazandibi", "Kıbrıs Tatlısı", "Şekerpare", "Sufle"];
     document.getElementById('dessertResult').innerText = "Tatlımız: " + tatlilar[Math.floor(Math.random() * tatlilar.length)];
 }
