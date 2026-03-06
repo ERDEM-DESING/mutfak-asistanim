@@ -4,20 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🍳 Mutfak Asistanım</title>
-    <style>
-        /* Sayfanın biraz düzgün görünmesi için temel stil */
-        body { font-family: sans-serif; background-color: #f4f4f4; padding: 20px; text-align: center; }
-        .container { background: white; padding: 20px; border-radius: 10px; max-width: 400px; margin: auto; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        select, input, button { width: 90%; padding: 10px; margin: 5px 0; border-radius: 5px; border: 1px solid #ddd; }
-        button { background-color: #e67e22; color: white; border: none; cursor: pointer; font-weight: bold; }
-        .result-box { background: #e8f5e9; padding: 10px; margin-top: 15px; border-radius: 5px; min-height: 30px; }
-        hr { margin: 20px 0; border: 0; border-top: 1px dashed #ccc; }
-    </style>
+    <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
-
     <div class="container">
-        <h1>🍳 Mutfak Asistanım</h1>
+        <h1>👨‍🍳 Mutfak Asistanım</h1>
 
         <div class="section">
             <h3>🍲 Bugün Ne Pişirsem?</h3>
@@ -25,20 +16,15 @@
             <p id="menuResult">Menü bekleniyor...</p>
         </div>
 
-        <hr>
-
         <div class="section">
             <h3>🍰 Tatlı Da Yesek Mi?</h3>
             <button onclick="tatliOner()">Rastgele Tatlı Seç</button>
             <p id="dessertResult">Tatlı bekleniyor...</p>
         </div>
 
-        <hr>
-
         <div class="section">
             <h3>⚖️ Akıllı Ölçü Dönüştürücü</h3>
-            
-            <label>Hangi Malzeme?</label>
+            <label>Malzeme:</label>
             <select id="material">
                 <option value="su">Su / Süt</option>
                 <option value="un">Un</option>
@@ -46,36 +32,33 @@
                 <option value="sivi_yag">Sıvı Yağ</option>
                 <option value="pirinc">Pirinç</option>
                 <option value="kakao">Kakao</option>
+                <option value="tereyagi">Tereyağı</option>
+                <option value="bal">Bal / Pekmez</option>
             </select>
 
             <input type="number" id="amount" placeholder="Miktar">
-            
             <select id="unit">
-                <option value="ml">Mililitre (ml)</option>
-                <option value="gr">Gram (gr)</option>
+                <option value="ml">ml</option>
+                <option value="gr">gr</option>
                 <option value="su_bardagi">Su Bardağı</option>
                 <option value="cay_bardagi">Çay Bardağı</option>
                 <option value="yemek_kasigi">Yemek Kaşığı</option>
             </select>
 
-            <p>⬇ Şuna Dönüştür ⬇</p>
+            <p>⬇ Dönüştür ⬇</p>
 
             <select id="targetUnit">
-                <option value="su_bardagi">Su Bardağı</option>
                 <option value="gr">Gram (gr)</option>
+                <option value="su_bardagi">Su Bardağı</option>
                 <option value="ml">Mililitre (ml)</option>
-                <option value="cay_bardagi">Çay Bardağı</option>
-                <option value="yemek_kasigi">Yemek Kaşığı</option>
             </select>
 
-            <button onclick="donustur()">Dönüştür</button>
-            
+            <button onclick="donustur()">Hesapla</button>
             <div class="result-box">
                 <p id="resultText">Sonuç burada görünecek.</p>
             </div>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>

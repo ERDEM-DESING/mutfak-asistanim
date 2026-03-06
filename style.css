@@ -1,5 +1,5 @@
 body { 
-    font-family: sans-serif; 
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif; 
     background-color: #fdf2e9; 
     display: flex; 
     justify-content: center; 
@@ -7,17 +7,16 @@ body {
 }
 .container { 
     background: white; 
-    padding: 25px; 
+    padding: 30px; 
     border-radius: 20px; 
     box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
     width: 350px; 
     text-align: center; 
 }
-.section {
-    border: 1px solid #eee;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 15px;
+.section { 
+    border-bottom: 1px solid #eee; 
+    padding-bottom: 15px; 
+    margin-bottom: 15px; 
 }
 button { 
     background-color: #e67e22; 
@@ -27,13 +26,12 @@ button {
     width: 100%; 
     cursor: pointer; 
     border-radius: 10px; 
-    font-weight: bold;
-    margin-top: 5px;
+    font-weight: bold; 
 }
 input, select { 
     width: 100%; 
     padding: 10px; 
-    margin: 8px 0; 
+    margin: 10px 0; 
     border-radius: 10px; 
     border: 1px solid #ddd; 
 }
