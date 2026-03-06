@@ -56,3 +56,4 @@ function tatliOner() {
     document.getElementById('dessertResult').innerText = "Tatlımız: " + tatlilar[Math.floor(Math.random() * tatlilar.length)];
 }// Update 1
 // Update 2
+// Update 3
