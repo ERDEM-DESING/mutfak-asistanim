@@ -5,3 +5,24 @@ button { color: white; border: none; padding: 10px; width: 100%; cursor: pointer
 #suggestor button { background-color: #d35400; }
 input, select { width: 100%; padding: 10px; margin: 10px 0; border-radius: 10px; border: 1px solid #ddd; box-sizing: border-box; }
 #resultText, #menuResult { margin-top: 15px; font-weight: bold; color: #d35400; }
+/* Dönüştürücü alanlarını daha belirgin yap */
+.section {
+    border: 1px solid #eee;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+}
+
+.result-box {
+    background-color: #f0fff4;
+    border: 1px dashed #27ae60;
+    padding: 10px;
+    margin-top: 10px;
+    color: #27ae60;
+}
+
+select:focus, input:focus {
+    outline: none;
+    border-color: #e67e22;
+    box-shadow: 0 0 5px rgba(230, 126, 34, 0.3);
+}
