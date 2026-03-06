@@ -1,7 +1,7 @@
-// --- BİRİM VE YOĞUNLUK VERİLERİ ---
 const malzemeler = {
     "su": 1, "sut": 1.03, "sivi_yag": 0.92, "un": 0.6,
-    "toz_seker": 0.85, "pirinc": 0.9, "pudra_sekeri": 0.6, "kakao": 0.5
+    "toz_seker": 0.85, "pirinc": 0.9, "pudra_sekeri": 0.6, "kakao": 0.5,
+    "tereyagi": 0.91, "bal": 1.42 
 };
 
 const birimHacimleri = {
@@ -9,7 +9,6 @@ const birimHacimleri = {
     "tatli_kasigi": 10, "cay_kasigi": 5, "ml": 1, "gr": 0 
 };
 
-// --- AKILLI DÖNÜŞTÜRÜCÜ FONKSİYONU ---
 function donustur() {
     let miktar = parseFloat(document.getElementById('amount').value);
     let kaynakBirim = document.getElementById('unit').value; 
@@ -34,10 +33,9 @@ function donustur() {
     document.getElementById('resultText').innerText = "Sonuç: " + finalSonuc;
 }
 
-// --- YEMEK ÖNERİSİ (İÇECEK EKLENDİ) ---
 function yemekOner() {
-    const corbalar = ["Mercimek Çorbası", "Ezogelin Çorbası", "Yayla Çorbası", "Domates Çorbası", "Tarhana Çorbası"];
-    const anaYemekler = ["Tas Kebabı", "Karnıyarık", "Taze Fasulye", "Hünkar Beğendi", "İzmir Köfte", "Patlıcan Musakka"];
+    const corbalar = ["Mercimek Çorbası", "Ezogelin Çorbası", "Yayla Çorbası", "Domates Çorbası"];
+    const anaYemekler = ["Tas Kebabı", "Karnıyarık", "Taze Fasulye", "Hünkar Beğendi", "İzmir Köfte"];
     const yanUrunler = ["Pirinç Pilavı", "Bulgur Pilavı", "Mevsim Salata", "Cacık", "Haydari"];
     const icecekler = ["Bol Köpüklü Ayran", "Acılı Şalgam Suyu", "Ev Yapımı Limonata", "Soğuk Çay", "Reyhan Şerbeti"];
 
@@ -50,10 +48,9 @@ function yemekOner() {
         "🥣 " + secilenCorba + "<br>" + 
         "🥘 " + secilenYemek + "<br>" + 
         "🍚 " + secilenYan + "<br>" +
-        "🥤 " + secilenIcecek; // İçecek burada ekrana basılıyor
+        "🥤 " + secilenIcecek;
 }
 
-// --- TATLI ÖNERİSİ ---
 function tatliOner() {
     const tatlilar = ["Sütlaç", "Baklava", "Künefe", "Magnolia", "Güllaç", "Kazandibi", "Supangle"];
     document.getElementById('dessertResult').innerText = "Tatlımız: " + tatlilar[Math.floor(Math.random() * tatlilar.length)];
