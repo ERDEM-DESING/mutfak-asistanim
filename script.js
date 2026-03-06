@@ -17,15 +17,15 @@ const birimHacimleri = {
     "tatli_kasigi": 10,
     "cay_kasigi": 5,
     "ml": 1,
-    "gr": 0 // Gram özel durum olduğu için 0 bıraktık, fonksiyonda yöneteceğiz
+    "gr": 0 
 };
 
 // --- AKILLI DÖNÜŞTÜRÜCÜ FONKSİYONU ---
 function donustur() {
     let miktar = parseFloat(document.getElementById('amount').value);
-    let kaynakBirim = document.getElementById('unit').value; // HTML'de "unit" id'li select olmalı
-    let hedefBirim = document.getElementById('targetUnit').value; // HTML'de "targetUnit" id'li select olmalı
-    let malzeme = document.getElementById('material').value; // HTML'de "material" id'li select olmalı
+    let kaynakBirim = document.getElementById('unit').value; 
+    let hedefBirim = document.getElementById('targetUnit').value; 
+    let malzeme = document.getElementById('material').value; 
 
     if (!miktar) {
         document.getElementById('resultText').innerText = "Lütfen miktar girin!";
@@ -35,7 +35,6 @@ function donustur() {
     const yogunluk = malzemeler[malzeme] || 1;
     let gramKarsiligi;
 
-    // 1. Adım: Kaynaktan Gram'a çevir
     if (kaynakBirim === "gr") {
         gramKarsiligi = miktar;
     } else {
@@ -43,7 +42,6 @@ function donustur() {
         gramKarsiligi = mlKarsiligi * yogunluk;
     }
 
-    // 2. Adım: Gram'dan Hedef Birime çevir
     let finalSonuc;
     if (hedefBirim === "gr") {
         finalSonuc = gramKarsiligi.toFixed(1) + " gr";
@@ -55,7 +53,7 @@ function donustur() {
     document.getElementById('resultText').innerText = "Sonuç: " + finalSonuc;
 }
 
-// --- YEMEK ÖNERİSİ ---
+// --- YEMEK ÖNERİSİ (GÜNCELLENDİ: İÇECEK EKLENDİ) ---
 function yemekOner() {
     const corbalar = [
         "Mercimek Çorbası", "Ezogelin Çorbası", "Yayla Çorbası", "Domates Çorbası", 
@@ -70,15 +68,22 @@ function yemekOner() {
         "Pirinç Pilavı", "Bulgur Pilavı", "Mevsim Salata", "Cacık", 
         "Gavurdağı Salatası", "Şehriye Pilavı", "Haydari", "Çoban Salata", "Humus", "Acılı Ezme", "Patates Kızartması", "Rus Salatası", "Şaksuka", "Deniz Börülcesi", "Mücver"
     ];
+    // Yeni Kategori: İçecekler
+    const icecekler = [
+        "Bol Köpüklü Ayran", "Acılı Şalgam Suyu", "Ev Yapımı Limonata", "Naneli Taze Ayran", 
+        "Sıkma Portakal Suyu", "Soğuk Çay", "Maden Suyu", "Üzüm Şırası", "Osmanlı Şerbeti"
+    ];
 
     const secilenCorba = corbalar[Math.floor(Math.random() * corbalar.length)];
     const secilenYemek = anaYemekler[Math.floor(Math.random() * anaYemekler.length)];
     const secilenYan = yanUrunler[Math.floor(Math.random() * yanUrunler.length)];
+    const secilenIcecek = icecekler[Math.floor(Math.random() * icecekler.length)];
 
     document.getElementById('menuResult').innerHTML = 
         "🥣 " + secilenCorba + "<br>" + 
         "🥘 " + secilenYemek + "<br>" + 
-        "🍚 " + secilenYan;
+        "🍚 " + secilenYan + "<br>" +
+        "🥤 " + secilenIcecek; // Ekrana içeceği basıyoruz
 }
 
 // --- TATLI ÖNERİSİ ---
