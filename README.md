@@ -10,3 +10,4 @@ Tas
 Kebabı
 ,
 Taze
+Fasulye
