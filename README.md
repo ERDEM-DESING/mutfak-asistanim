@@ -4,3 +4,4 @@ ana yemekler
 kuzu
 i
 n
+cik
